@@ -36,6 +36,13 @@ const reqpost=app.post(('/'),(req,res)=>{
     })
 })
 
+const reqput=app.put(('/'),(req,res)=>{
+
+    connection.query(`UPDATE elements SET titre='wwwccc',resumé='cvvvv' WHERE id=2`,(err,result)=>{
+        if(err) throw err;
+        res.send('modififier')
+    })
+})
 
 
 app.listen(3000,()=>{console.log('okok')})
